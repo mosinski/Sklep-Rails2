@@ -138,12 +138,12 @@ en:
   activerecord:
     attributes:
       user:
-        password:              "Hasło"
-        password_confirmation: "Potwierdź Hasło"
-        current_password:      "Aktualne hasło"
-        username:              "Nazwa Użytkownika"
-        email:                 "E-mail"
-        remember_me:           "zapamiętaj mnie"
+        password:              'Hasło'
+        password_confirmation: 'Potwierdź Hasło'
+        current_password:      'Aktualne hasło'
+        username:              'Nazwa Użytkownika'
+        email:                 'E-mail'
+        remember_me:           'zapamiętaj mnie'
     errors:
       <<: *errors
 
@@ -164,8 +164,8 @@ en:
       user_session:
     attributes:
       user_session:
-        login: 			"Nazwa użytkownika"
-        email:			"E-mail"
-        password:		"Hasło"
-        remember_me:		"Pamiętaj mnie"
+        login: 			'Nazwa użytkownika'
+        email:			'E-mail'
+        password:		'Hasło'
+        remember_me:		'Pamiętaj mnie'
 
