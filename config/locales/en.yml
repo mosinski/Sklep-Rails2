@@ -160,12 +160,4 @@ en:
       not_confirmed: "Twoje konto nie zostało potwierdzone"
       not_approved: "Twoje konto nie zostało zatwierdzone"
       no_authentication_details: "Nie podałeś wymaganych pól"
-    models:
-      user_session:
-    attributes:
-      user_session:
-        login: 			'Nazwa użytkownika'
-        email:			'E-mail'
-        password:		'Hasło'
-        remember_me:		'Pamiętaj mnie'
 
