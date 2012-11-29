@@ -1,4 +1,6 @@
 SklepRails3::Application.routes.draw do
+  resources :produkts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

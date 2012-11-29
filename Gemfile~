@@ -29,7 +29,6 @@ end
 gem 'jquery-rails'
 
 gem 'simple_form'
-
 group :development do
   # ładniejsze wypisywanie rekordów na konsoli
   # (zob. konfiguracja irb w ~/.irbrc)
