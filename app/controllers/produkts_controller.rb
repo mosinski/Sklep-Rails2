@@ -24,11 +24,17 @@ class ProduktsController < ApplicationController
   # GET /produkts/new
   # GET /produkts/new.json
   def new
-    @produkt = Produkt.new
+    if current_user
+	if current_user.username == 'Administrator'||'Jadwiga'
+		@produkt = Produkt.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @produkt }
+		respond_to do |format|
+      			format.html # new.html.erb
+      			format.json { render json: @produkt }
+    		end
+	end
+    else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do dodania produktu!"
     end
   end
 
@@ -40,44 +46,63 @@ class ProduktsController < ApplicationController
   # POST /produkts
   # POST /produkts.json
   def create
-    @produkt = Produkt.new(params[:produkt])
+    if current_user
+	if current_user.username == 'Administrator'||'Jadwiga'
+    		@produkt = Produkt.new(params[:produkt])
 
-    respond_to do |format|
-      if @produkt.save
-        format.html { redirect_to @produkt, notice: 'Produkt was successfully created.' }
-        format.json { render json: @produkt, status: :created, location: @produkt }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @produkt.errors, status: :unprocessable_entity }
-      end
+   		 respond_to do |format|
+      			if @produkt.save
+        		format.html { redirect_to @produkt, notice: 'Produkt was successfully created.' }
+        		format.json { render json: @produkt, status: :created, location: @produkt }
+      			else
+        		format.html { render action: "new" }
+        		format.json { render json: @produkt.errors, status: :unprocessable_entity }
+      			end
+    		end
+	end
+    else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do dodania produktu!"
     end
   end
 
   # PUT /produkts/1
   # PUT /produkts/1.json
   def update
-    @produkt = Produkt.find(params[:id])
+    if current_user
+	if current_user.username == 'Administrator'||'Jadwiga'
+    		@produkt = Produkt.find(params[:id])
 
-    respond_to do |format|
-      if @produkt.update_attributes(params[:produkt])
-        format.html { redirect_to @produkt, notice: 'Produkt was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @produkt.errors, status: :unprocessable_entity }
-      end
+    		respond_to do |format|
+      			if @produkt.update_attributes(params[:produkt])
+        		format.html { redirect_to @produkt, notice: 'Produkt was successfully updated.' }
+        		format.json { head :no_content }
+      			else
+        		format.html { render action: "edit" }
+        		format.json { render json: @produkt.errors, status: :unprocessable_entity }
+      			end
+    		end
+	end
+    else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do edycji produktu!"
     end
   end
 
   # DELETE /produkts/1
   # DELETE /produkts/1.json
   def destroy
-    @produkt = Produkt.find(params[:id])
-    @produkt.destroy
+    if current_user
+	if current_user.username == 'Administrator'||'Jadwiga'
 
-    respond_to do |format|
-      format.html { redirect_to produkts_url }
-      format.json { head :no_content }
+    	@produkt = Produkt.find(params[:id])
+    	@produkt.destroy
+
+    	respond_to do |format|
+      		format.html { redirect_to produkts_url }
+      		format.json { head :no_content }
+    	end
+	end
+    else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do usuniecia produktu!"
     end
   end
 end

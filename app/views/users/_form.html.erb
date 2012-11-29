@@ -1,0 +1,37 @@
+<style>
+.form-inputs label{
+	font-size:18px;
+}
+</style>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+    <% if  (@user.errors.count)==1  %>
+      <h2>Użytkownik nie został stworzony z powodu jednego błędu</h2>
+    <% elsif (@user.errors.count)>1 %>
+	<h2>Użytkownik nie został stworzony z powodu <%= @user.errors.count %> błędów</h2>
+    <% end %>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br /><br />
+
+  <div class="form-inputs">
+    <%= f.input :username, :label => 'Nazwa Użytkownika', :placeholder => 'np. jkowalski' %>
+    <%= f.input :imie, :label => 'Imię', :placeholder => 'np. Jan' %>
+    <%= f.input :nazwisko, :label => 'Nazwisko', :placeholder => 'np. Kowalski' %>
+    <div class="data_urodzenia">
+    <%= f.label :data_urodzenia %><%= f.select(:data_urodzenia_dzien, options_for_select((1..31))) %></div><%= f.select(:data_urodzenia_miesiac, options_for_select([['Styczeń', '01'], ['Luty', '02'], ['Marzec', '03'], ['Kwiecień', '04'], ['Maj', '05'], ['Czerwiec', '06'], ['Lipiec', '07'], ['Sierpień', '08'], ['Wrzesień', '09'], ['Październik', '10'], ['Listopad', '11'], ['Grudzień', '12']]), {}, {:class => "miesiac"}) %><%= f.select(:data_urodzenia_rok, options_for_select((1920..2012))) %>
+
+    <%= f.input :adres_ulica, :label => 'Adres Ulica', :placeholder => 'np. Prosta 23/3' %>
+    <%= f.input :adres_kod, :label => 'Adres Kod Pocztowy', :placeholder => 'np. 85-125' %>
+    <%= f.input :adres_miasto, :label => 'Adres Miasto', :placeholder => 'np. Gdańsk' %>
+    <%= f.input :email, :label => 'Email', :placeholder => 'kowalski@poczta.pl' %>
+    <%= f.input :password, :label => 'Hasło', :placeholder => '*******' %>
+    <%= f.input :password_confirmation, :label => 'Potwierdź Hasło', :placeholder => '*******' %>
+    </div>
+<br />
+

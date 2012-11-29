@@ -1,69 +1,182 @@
+@charset "iso-8859-1";
+/* CSS Document */
+
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+}
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding:0px;
+	background-image: url(images/bkg.jpg);
+}
+a:link {
+	color: #D255F4;
+}
+a:visited {
+	color: #D255F4;
+}
+a:hover {
+	color: #D255F4;
+}
+a:active {
+	color: #D255F4;
+}
+form{
+margin:0px;padding:0px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+.menu {
+    background-image: url("images/header.jpg");
+    display: block;
+    position: fixed;
+    left: 0px;
+    width: 100%;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+#wht{
+color:#BBBBBB;text-decoration:none;
+}
+#wht2{
+color:#FFFFFF;text-decoration:none;
+}
+.txt{
+color:#BBBBBB;
+}
+.cls{
+width:100px;background-color:#353535;color:#BBBBBB;
+}
+.int{
+width:147px;background-color:#353535;color:#BBBBBB;font-family:Arial, Helvetica, sans-serif;font-size:12px;
+}
+.button{
+background-image:url(images/button1.jpg);background-repeat:no-repeat;width:209px;height:32px;color:#BBBBBB;
+}
+.button1{
+background-image:url(images/spo2.jpg);background-repeat:no-repeat;width:209px;height:31px;color:#BBBBBB;
+}
+.tbody{
+background:url(https://github.com/mosinski/Sklep-Rails/raw/master/app/assets/stylesheets/images/body-bg.png);
+}
+.style1 {font-size: 22px}
+
+.buttonwhite{
+width:209px;height:31px;background-image:url(images/buttonwhite.jpg);background-repeat:no-repeat;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#000000;
+}
+#black{
+color:#000000;text-decoration:none;
+}
+.news{
+background-image:url(images/news.jpg);background-repeat:repeat-x;
+}
+.WhiteNews{
+font-family:Arial, Helvetica, sans-serif;font-size:22px;color:#FFFFFF;
+}
+.NewsInfo{
+width:159px;background-color:#353535;border-style:solid;border-color:#4C4C4C;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#BBBBBB;border-width:1px;
+}
+.style2 {color: #E33B3F}
+.footer{
+background-image:url(images/footer.jpg);background-repeat:repeat-x;
+}
+#user_session_username, #user_username{
+    width: 180px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+#user_session_password, #user_password{
+    width: 180px;
+    margin-left: 134px;
+    font-size: 20px;
+}
+#user_password_confirmation{
+    width: 180px;
+    margin-left: 50px;
+    font-size: 20px;
+}
+#user_imie{
+    width: 180px;
+    margin-left: 147px;
+    font-size: 20px;
+}
+#user_nazwisko{
+    width: 180px;
+    margin-left: 104px;
+    font-size: 20px;
+}
+#user_data_urodzenia_dzien{
+    width:50px;
+    margin-left: 58px;
+    font-size: 20px;
+}
+#user_data_urodzenia_miesiac, #user_data_urodzenia_rok{
+font-size: 20px;
+}
+#user_adres_ulica{
+    width:180px;
+    margin-left: 88px;
+    font-size: 20px;
+}
+#user_adres_kod{
+    width:180px;
+    margin-left: 14px;
+    font-size: 20px;
+}
+#user_adres_miasto{
+    width:180px;
+    margin-left: 75px;
+    font-size: 20px;
 }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+.data_urodzenia{
+display:inline-block;
+}
+.miesiac{
+display:inline-block;
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
+#user_email{
+    width: 180px;
+    margin-left: 135px;
+    font-size: 20px;
 }
+.string required {
+font-size:18px;
+}	
+.produkty{
 
-#notice {
-  color: green;
+}	
+.produkt{
+display:inline-block;
+box-shadow: 1px 1px 1px rgb(182, 184, 178);
+border: 1px solid rgb(239, 239, 239);
+transition: all 0.4s ease 0s;
+background-color:#ffffff;
+width:220px;
+margin-right:10px;
+margin-left:10px;
 }
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+.produkt:hover {
+    box-shadow: 5px 5px 5px rgb(182, 184, 178);
+    position: relative;
 }
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+.notice{
+    display:block;
+    position:fixed;
+    top:86px;
+    left:40%;
+    background-color: rgb(242, 222, 222);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(51, 51, 51);
+    padding: 8px;
+    border-radius: 18px 18px 18px 18px;
+}
+.notice:hover {
+    visibility:hidden;
 }

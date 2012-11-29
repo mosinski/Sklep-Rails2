@@ -1,0 +1,19 @@
+<style>
+.form-inputs label{
+	font-size:18px;
+}
+   
+</style>
+<%= simple_form_for(@user_session) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :username, :label => 'Nazwa Użytkownika' %>
+    <%= f.input :password, :label => 'Hasło', :placeholder => '*******' %>
+  </div>
+
+<%= f.check_box :remember_me %><%= f.label :zapamietaj_mnie %>
+<br /><br /><br /><br />
+
+    <%= f.button :submit, :value => 'Zaloguj się'%> <%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
+<% end %>

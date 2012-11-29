@@ -1,0 +1,36 @@
+<% title "Użytkownicy" %>
+<h1><%= yield(:title) %></h1>
+<% if current_user %>
+<%if notice =! '' %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<table>
+  <tr>
+    <th>User</th>
+  </tr>
+
+  <tr>
+<% @users.each do |user| %>
+    <td>
+ <% if (user.avatarurl.nil?) or (user.avatarurl == '') %>
+<%= image_tag avatar_url(user),:width => 60, :height => 60 %><br/>
+ <% else %>
+<%= image_tag(user.avatarurl, :size => "60x60", :id => "avatar_maly") %><br/>
+ <% end %>
+<%= user.username %><br/><%= link_to image_tag("eye.png"), user %>
+    <% if current_user.username == user.username %><%= link_to image_tag("edit.png"), edit_user_path(user) %>
+<%= link_to image_tag("trash.png"), user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
+<% end %>
+  </tr>
+
+</table>
+
+<br />
+
+<% else %>
+<center><%= image_tag("dostep_zabroniony.gif") %></center><br/>
+<script type="text/javascript">
+window.location.href="http://napsterug.herokuapp.com/login"
+</script>
+<% end %>
+

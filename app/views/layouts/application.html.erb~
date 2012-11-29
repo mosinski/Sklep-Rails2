@@ -39,7 +39,7 @@
   </td>
   </tr>
   </table>
-  <% if notice != NIL %>
+  <% if notice != '' %>
   <div class="notice"> <%= notice %> </div>
   <% end %>
   <table width="990"  border="0" cellspacing="0" cellpadding="0" style="margin-top:85px;">

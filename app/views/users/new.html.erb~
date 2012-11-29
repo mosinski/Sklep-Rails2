@@ -1,0 +1,10 @@
+<script src="http://napsterug.herokuapp.com/pwdstr.js"></script>
+<% title "Rejestracja" %>
+<h1><%= yield(:title) %></h1>
+<%= simple_form_for @user, :html => { :multipart => true } do |f| %>
+<%= render partial: 'form', locals: { f: f } %>
+
+ <%= f.button :submit, :class => 'button', :value => 'Stwórz Konto' %> <%= link_to 'Powrót', produkts_url, :class => 'btn btn-warning' %>
+<% end %>
+
+
