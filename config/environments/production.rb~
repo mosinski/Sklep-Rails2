@@ -1,5 +1,16 @@
 SklepRails3::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+ :address => 's4.masternet.pl',
+:port => 465,
+:user_name => "m1l05z@m1l05z.masternet.pl",
+:password => ENV['SMTP_PASSWORD'],
+:authentication => :plain,
+:enable_starttls_auto => true,
+:openssl_verify_mode => 'none' 
+  }
+  config.action_mailer.raise_delivery_errors = true
   # Code is not reloaded between requests
   config.cache_classes = true
 
