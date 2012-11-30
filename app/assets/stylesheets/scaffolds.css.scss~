@@ -159,6 +159,7 @@ background-color:#ffffff;
 width:220px;
 margin-right:10px;
 margin-left:10px;
+margin-top:10px;
 }
 .produkt:hover {
     box-shadow: 5px 5px 5px rgb(182, 184, 178);
@@ -190,7 +191,6 @@ vertical-align: top;
 .produkt_show_info{
 padding: 20px;
 border-bottom: 2px solid rgb(229, 229, 229);
-==
 }
 .produkt_show_tytul{							
     color: rgb(64, 64, 64);
