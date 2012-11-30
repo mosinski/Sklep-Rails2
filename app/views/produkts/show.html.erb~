@@ -9,7 +9,7 @@
 <%= @produkt.tytul %>
 </div>
 <div class="produkt_show_cena">
-cena: <strong><%= @produkt.cena %> zł</strong>
+cena: <strong><%= @produkt.cena %></strong>
 </div>
 </div>
 
