@@ -1,7 +1,7 @@
 Drogi użytkowniku <b><%= @user.username %></b>,<br>
 Dziękujemu za Rejestracje w naszym sklepie!<br>
 <br>
-W każdej chwili możesz dokonać edycji konta: <%= link_to "Edycja konta w Sklep-Rails.pl", edit_user_url(@user) %><br>
+W każdej chwili możesz dokonać edycji konta: <%= link_to "Edycja konta w Sklep-Rails.pl", edit_user_url(@user, :host => "sklep-rails.herokuapp.com") %><br>
 <br>
 Jeśli nie jest Ci nic wiadome o rejestracji w Sklepie-Rails.pl kliknij: <%= link_to 'Nie zakładałem konta w serwisie Sklep-Rails.pl', @user, :method => :delete %><br>
 <br>
