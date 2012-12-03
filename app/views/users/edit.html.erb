@@ -2,53 +2,9 @@
 <h1><%= yield(:title) %></h1>
 <% if current_user %>
 <% if current_user.username == @user.username %>
-
-<%= form_for @user, :html => { :multipart => true } do |f| %>
-  <div class="field">
-    <%= f.label :avatar %>
-    <%=link_to "Zmień", "http://pl.gravatar.com/",:class => 'btn btn-mini btn-inverse' %><br /></div>
-<% if (@user.avatarurl.nil?) or (@user.avatarurl == '') %>
-<%= label_tag(:pet_dog, "Avatar z url") %><input type="checkbox" name="checkbox_avatar" value="wartość" class="checkbox_avatar" />
-<% else %>
-<%= label_tag(:pet_dog, "Avatar z url") %><input type="checkbox" name="checkbox_avatar" value="wartość" class="checkbox_avatar" checked/>
-<% end %>
-<div class="avatarfromurl">
-<%= f.text_field :avatarurl, :placeholder => 'URL Avatar-a', :class => "avatar_text_field" %>
-</div>
+<%= simple_form_for @user, :html => { :multipart => true } do |f| %>
 <%= render partial: 'form', locals: { f: f } %>
-<div class="efekty_profilu">
-<div class="efekty_profilu_napis">
-<%=label_tag("Efekty na Profilu") %><br><br>
-</div>
-<div class="efekty_wnetrze">
-<% if @user.ptaki == '1' %>
-<%= label_tag("Ptaki") %><input type="checkbox" name="checkbox_ptaki" value="wartość" class="checkbox_ptaki" checked/><%= f.text_field :ptaki, :class => "ptaki_text_field" %><br>
-<% else %>
-<%= label_tag("Ptaki") %><input type="checkbox" name="checkbox_ptaki" value="wartość" class="checkbox_ptaki" /><%= f.text_field :ptaki, :class => "ptaki_text_field" %><br>
-<% end %>
-<% if @user.kolka == '1' %>
-<%= label_tag("Kółka") %><input type="checkbox" name="checkbox_kolka" value="wartość" class="checkbox_kolka" checked/><%= f.text_field :kolka, :class => "kolka_text_field" %><br>
-<% else %>
-<%= label_tag("Kółka") %><input type="checkbox" name="checkbox_kolka" value="wartość" class="checkbox_kolka" /><%= f.text_field :kolka, :class => "kolka_text_field" %><br>
-<% end %>
-<% if @user.samochod == '1' %>
-<%= label_tag("Kółka 2") %><input type="checkbox" name="checkbox_samochod" value="wartość" class="checkbox_samochod" checked/><%= f.text_field :samochod, :class => "samochod_text_field" %><br>
-<% else %>
-<%= label_tag("Kółka 2") %><input type="checkbox" name="checkbox_samochod" value="wartość" class="checkbox_samochod" /><%= f.text_field :samochod, :class => "samochod_text_field" %><br>
-<% end %>
-<% if @user.szesciany == '1' %>
-<%= label_tag("Kwadrat") %><input type="checkbox" name="checkbox_szesciany" value="wartość" class="checkbox_szesciany" checked/><%= f.text_field :szesciany, :class => "szesciany_text_field" %><br>
-<% else %>
-<%= label_tag("Kwadrat") %><input type="checkbox" name="checkbox_szesciany" value="wartość" class="checkbox_szesciany" /><%= f.text_field :szesciany, :class => "szesciany_text_field" %><br>
-<% end %>
-<% if @user.woda == '1' %>
-<%= label_tag("Woda") %><input type="checkbox" name="checkbox_woda" value="wartość" class="checkbox_woda" checked/><%= f.text_field :woda, :class => "woda_text_field" %><br>
-<% else %>
-<%= label_tag("Woda") %><input type="checkbox" name="checkbox_woda" value="wartość" class="checkbox_woda" /><%= f.text_field :woda, :class => "woda_text_field" %><br>
-<% end %>
-</div>
-</div>
- <%= f.submit :class => 'btn btn-success', :value => "Zapisz Zmiany"%> <%= link_to 'Powrót', root_url, :class => 'btn btn-warning' %>
+<%= f.button :submit, :value => 'Aktualizuj Konto' %><%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
 <% end %>
 <% else %>
 <center><%= image_tag("dostep_zabroniony.gif") %></center><br/>
@@ -56,4 +12,3 @@
 <% else %>
 <center><%= image_tag("dostep_zabroniony.gif") %></center><br/>
 <% end %>
-<%= link_to 'Zobacz Konto', @user,:class => 'btn btn-info' %>
