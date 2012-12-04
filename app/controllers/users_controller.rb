@@ -82,17 +82,18 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
-  if current_user
+     if current_user
 	if current_user.username == 'Administrator'||'Moderator'||@user.username
-    @user.destroy
+    	@user.destroy
 
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    	respond_to do |format|
+    	  format.html { redirect_to users_url }
+   	  format.json { head :no_content }
+   	 end
     	end
-  else
-  redirect_to produkts_url, notice: 'Nie masz odpowiednich uprawnien!'
+      else
+    redirect_to produkts_url, notice: 'Nie masz odpowiednich uprawnien!'
+    end
   end
 
   def pomylka
