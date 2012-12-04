@@ -25,7 +25,7 @@ class ProduktsController < ApplicationController
   # GET /produkts/new.json
   def new
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if current_user.username == 'Administrator'||'Moderator'
 		@produkt = Produkt.new
 
 		respond_to do |format|
@@ -47,7 +47,7 @@ class ProduktsController < ApplicationController
   # POST /produkts.json
   def create
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if current_user.username == 'Administrator'||'Moderator'
     		@produkt = Produkt.new(params[:produkt])
 
    		 respond_to do |format|
@@ -91,7 +91,7 @@ class ProduktsController < ApplicationController
   # DELETE /produkts/1.json
   def destroy
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if current_user.username == 'Administrator'||'Moderator'
 
     	@produkt = Produkt.find(params[:id])
     	@produkt.destroy

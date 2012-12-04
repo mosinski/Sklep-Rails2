@@ -1,0 +1,14 @@
+<% title "Nie Zakładałem Konta w Sklep-Rails.pl" %>
+<h1><%= yield(:title) %></h1>
+<u>Proszę o usunięcie mojego maila z bazy danych sklepu</u><br><br>
+<%= form_tag "/nie_zakladalem_konta" do %>
+  <b><%= label_tag(:q, "Kod Dostępu:") %></b>
+  <%= text_field_tag(:token_input, nil, :placeholder => "Wpisz kod dostępu podany w mail-u") %><br><br>
+  <%= submit_tag "Wyślij", :class => "button" %>
+<% end %>
+
+
+
+
+
+

@@ -1,10 +1,12 @@
 SklepRails3::Application.routes.draw do
   resources :produkts
 
- resources :users, :user_sessions
+  resources :users, :user_sessions
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  match '/nie_zakladalem_konta' => 'users_#pomylka'
+  match '/zgloszenie' => 'users_#zgloszenie'
   root :to => 'produkts#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

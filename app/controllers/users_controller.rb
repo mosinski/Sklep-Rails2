@@ -34,7 +34,15 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+  if current_user
+	@user = User.find(params[:id])
+	if current_user.username == 'Administrator'||'Moderator'||@user.username
+	else
+  	redirect_to produkts_url, :notice => 'Nie masz uprawnien aby edytowac!'
+    	end
+  else
+  redirect_to :login, :notice => 'Zaloguj sie aby edytowac!'
+  end
   end
 
   # POST /users
@@ -74,11 +82,30 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
+  if current_user
+	if current_user.username == 'Administrator'||'Moderator'||@user.username
     @user.destroy
 
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+    	end
+  else
+  redirect_to produkts_url, notice: 'Nie masz odpowiednich uprawnien!'
+  end
+
+  def pomylka
+    @user = User.find_by_persistence_token(params[:token_input])
+    if @user != NIL
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to produkts_url, notice: 'Dziekujemy za zawidomienie!' }
+      format.json { head :no_content }
+    end
+    else
+    redirect_to produkts_url, notice: 'Niepoprawny kod dostepu!'
+   end
   end
 end

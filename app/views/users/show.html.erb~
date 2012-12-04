@@ -16,7 +16,10 @@
   <b>Data Urodzenia:</b>
   <%=h @user.data_urodzenia_dzien %>.<%=h @user.data_urodzenia_miesiac %>.<%=h @user.data_urodzenia_rok %>
 </p>
-
+<p>
+  <b>Token:</b>
+<%=h @user.persistence_token %>
+</p>
 <p>
   <b>Liczba logowań:</b>
   <%=h @user.login_count %>

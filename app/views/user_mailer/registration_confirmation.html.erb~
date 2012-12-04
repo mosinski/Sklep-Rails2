@@ -3,7 +3,8 @@ Dziękujemu za Rejestracje w naszym sklepie!<br>
 <br>
 W każdej chwili możesz dokonać edycji konta: <%= link_to "Edycja konta w Sklep-Rails.pl", edit_user_url(@user, :host => "sklep-rails.herokuapp.com") %><br>
 <br>
-Jeśli nie jest Ci nic wiadome o rejestracji w Sklepie-Rails.pl kliknij: <%= link_to 'Nie zakładałem konta w serwisie Sklep-Rails.pl', (@user, :host => "sklep-rails.herokuapp.com"), :method => :delete %><br>
+<b>Kod dostępu:</b> <%= @user.persistence_token %><br><br>
+Jeśli nie jest Ci nic wiadome o rejestracji w Sklepie-Rails.pl kliknij: <%= link_to 'Nie zakładałem konta w serwisie Sklep-Rails.pl', "sklep-rails.herokuapp.com/zgloszenie" %><br>
 <br>
 
 Pozdrawiamy i Życzymy miłych zakupów.
