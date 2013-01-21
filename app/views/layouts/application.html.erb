@@ -27,7 +27,7 @@
         <% if current_user %>
 	<td width="29%" align="right" class="txt">Koszyk: <a href="#" id="wht2"><%= Koszyk.find_all_by_wlasciciel(current_user.username).count %> produkt</a></td>	
 	<% else %>	
-	<td width="29%" align="right" class="txt">Koszyk: <a href="#" id="wht2">0 produktów</a></td>
+	<td width="29%" align="right" class="txt">Koszyk: <a href="/login" id="wht2">pusty</a></td>
 	<% end %>
 	<td width="80px" class="txt" align="right">
 		<table width="70%"  border="0" cellspacing="0" cellpadding="0" align="right">

@@ -40,6 +40,7 @@ class KoszyksController < ApplicationController
   # POST /koszyks
   # POST /koszyks.json
   def create
+    if current_user
     @koszyk = Koszyk.new(params[:koszyk])
     @koszyk.wlasciciel = current_user.username
     @koszyk.produkt_id = params[:koszyk_produkt_id]
@@ -56,6 +57,9 @@ class KoszyksController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @koszyk.errors, status: :unprocessable_entity }
       end
+    end
+    else
+    redirect_to '/login', notice: 'Wymagane logowanie'
     end
   end
 

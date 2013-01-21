@@ -15,9 +15,9 @@ cena: <strong><%= @produkt.cena %> zł</strong>
 rozmiar:
 <font style="font-size:18px;font-weight:bold;color:black;">
   <%= radio_button_tag :rozmiar, 'XS' %> 
-  <%= label_tag :rozmiar, 'XS', :value => 'XS' %>
+  <%= label_tag :rozmiar_xs, 'XS', :value => 'XS' %>
   <%= radio_button_tag :rozmiar, 'S' %>
-  <%= label_tag :rozmiar, 'S', :value => 'S' %>
+  <%= label_tag :rozmiar_s, 'S', :value => 'S' %>
   <%= radio_button_tag :rozmiar, 'M' %>
   <%= label_tag :rozmiar_m, 'M', :value => 'M' %>
   <%= radio_button_tag :rozmiar, 'L' %>

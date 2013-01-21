@@ -34,7 +34,7 @@ rozmiar:
 
 <div class="produkt_show_opis">
   <b>Opis:</b><br />
-  <%= @produkt.opis %>
+  <%= simple_format(@produkt.opis) %>
 </div>
 </div>
 <%= text_field_tag :koszyk_produkt_id, @produkt.id %>
