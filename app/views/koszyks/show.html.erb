@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Wlasciciel:</b>
+  <%= @koszyk.wlasciciel %>
+</p>
+
+<p>
+  <b>Produkt:</b>
+  <%= @koszyk.produkt_id %>
+</p>
+
+<p>
+  <b>Ilosc:</b>
+  <%= @koszyk.ilosc %>
+</p>
+
+<p>
+  <b>Cena:</b>
+  <%= @koszyk.cena %>
+</p>
+
+<p>
+  <b>Wartosc:</b>
+  <%= @koszyk.wartosc %>
+</p>
+<p>
+  <b>Rozmiar:</b>
+  <%= @koszyk.rozmiar %>
+</p>
+
+
+<%= link_to 'Edit', edit_koszyk_path(@koszyk) %> |
+<%= link_to 'Back', koszyks_path %>

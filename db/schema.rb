@@ -11,15 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129222837) do
+ActiveRecord::Schema.define(:version => 20130121173101) do
+
+  create_table "koszyks", :force => true do |t|
+    t.string   "wlasciciel"
+    t.integer  "produkt_id"
+    t.integer  "ilosc"
+    t.decimal  "cena"
+    t.decimal  "wartosc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "rozmiar"
+  end
 
   create_table "produkts", :force => true do |t|
     t.string   "tytul"
     t.text     "opis"
     t.decimal  "cena"
     t.string   "obrazek_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "rozmiarxs",   :default => "0"
+    t.string   "rozmiars",    :default => "0"
+    t.string   "rozmiarm",    :default => "0"
+    t.string   "rozmiarl",    :default => "0"
+    t.string   "rozmiarxl",   :default => "0"
+    t.string   "rozmiarxxl",  :default => "0"
   end
 
   create_table "user_sessions", :force => true do |t|

@@ -205,7 +205,17 @@ border-bottom: 2px solid rgb(229, 229, 229);
 .produkt_show_cena strong {
 color: rgb(252, 0, 48);
 }
+.produkt_rozmiar{
+font-size:24px;
+margin-left:10px;
+}
 #token_input{
 width:600px;
 }
-
+#koszyk_produkt_id,#koszyk_cena,#koszyk_rozmiar{
+display:none;
+}
+#koszyk_ilosc{
+width:40px;
+font-size:18px;
+}

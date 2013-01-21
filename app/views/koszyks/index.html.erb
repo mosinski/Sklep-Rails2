@@ -1,0 +1,31 @@
+<h1>Listing koszyks</h1>
+
+<table>
+  <tr>
+    <th>Wlasciciel</th>
+    <th>Produkt</th>
+    <th>Ilosc</th>
+    <th>Cena</th>
+    <th>Wartosc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @koszyks.each do |koszyk| %>
+  <tr>
+    <td><%= koszyk.wlasciciel %></td>
+    <td><%= koszyk.produkt_id %></td>
+    <td><%= koszyk.ilosc %></td>
+    <td><%= koszyk.cena %></td>
+    <td><%= koszyk.wartosc %></td>
+    <td><%= link_to 'Show', koszyk %></td>
+    <td><%= link_to 'Edit', edit_koszyk_path(koszyk) %></td>
+    <td><%= link_to 'Destroy', koszyk, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Koszyk', new_koszyk_path %>

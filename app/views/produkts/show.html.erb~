@@ -1,5 +1,6 @@
 <% title @produkt.tytul %>
 <br />
+<%= form_tag "/dodaj_do_koszyka" do %>
 <div class="produkt_show">
 <div class="produkt_show_obrazek">
 <%= image_tag(@produkt.obrazek_url, :class => "produkty_obrazek", :size => "260x319") %>
@@ -9,8 +10,26 @@
 <%= @produkt.tytul %>
 </div>
 <div class="produkt_show_cena">
-cena: <strong><%= @produkt.cena %></strong>
+cena: <strong><%= @produkt.cena %> zł</strong>
+<br />
+rozmiar:
+<font style="font-size:18px;font-weight:bold;color:black;">
+  <%= radio_button_tag :rozmiar, 'XS' %> 
+  <%= label_tag :rozmiar, 'XS', :value => 'XS' %>
+  <%= radio_button_tag :rozmiar, 'S' %>
+  <%= label_tag :rozmiar, 'S', :value => 'S' %>
+  <%= radio_button_tag :rozmiar, 'M' %>
+  <%= label_tag :rozmiar_m, 'M', :value => 'M' %>
+  <%= radio_button_tag :rozmiar, 'L' %>
+  <%= label_tag :rozmiar_l, 'L', :value => 'L' %>
+  <%= radio_button_tag :rozmiar, 'XL' %>
+  <%= label_tag :rozmiar_xl, 'XL', :value => 'XL' %>
+  <%= radio_button_tag :rozmiar, 'XXL' %>
+  <%= label_tag :rozmiar_xxl, 'XXL', :value => 'XXL' %>
+</font>
 </div>
+<br />
+ <%= text_field_tag :koszyk_ilosc %><strong> x </strong><%= submit_tag "Dodaj do Koszyka", :class => "button" %>
 </div>
 
 <div class="produkt_show_opis">
@@ -18,7 +37,10 @@ cena: <strong><%= @produkt.cena %></strong>
   <%= @produkt.opis %>
 </div>
 </div>
-
+<%= text_field_tag :koszyk_produkt_id, @produkt.id %>
+<%= text_field_tag :koszyk_cena, @produkt.cena %>
+<%= text_field_tag :koszyk_rozmiar %>
+<% end %>
 <%= link_to 'Edit', edit_produkt_path(@produkt) %> |
 <%= link_to 'Back', produkts_path %>
 </div>
