@@ -31,9 +31,8 @@ rozmiar:
 <br />
  <%= text_field_tag :koszyk_ilosc %><strong> x </strong><%= submit_tag "Dodaj do Koszyka", :class => "button" %>
 </div>
-
+<br />
 <div class="produkt_show_opis">
-  <b>Opis:</b><br />
   <%= simple_format(@produkt.opis) %>
 </div>
 </div>
@@ -41,6 +40,8 @@ rozmiar:
 <%= text_field_tag :koszyk_cena, @produkt.cena %>
 <%= text_field_tag :koszyk_rozmiar %>
 <% end %>
+<% if current_user && current_user.username == "Administrator" %>
 <%= link_to 'Edit', edit_produkt_path(@produkt) %> |
-<%= link_to 'Back', produkts_path %>
+<% end %>
+<%= link_to 'Wróć do listy', produkts_path %>
 </div>
