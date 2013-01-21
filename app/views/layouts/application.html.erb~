@@ -24,9 +24,9 @@
 	<% else %>
 	<td width="25%" height="25" align="center"><%= link_to "Logowanie", :login %> | <%= link_to "Rejestracja", new_user_path%></td>
 	<% end %>
-	<td width="29%" align="right" class="txt">Koszyk: <a href="#" id="wht2"><%= Koszyk.find_all_by_wlasciciel(current_user.username).count %> produk</a></td>		
+	<td width="29%" align="right" class="txt">Koszyk: <a href="#" id="wht2"><%= Koszyk.find_all_by_wlasciciel(current_user.username).count %> produkt</a></td>		
 	<td width="80px" class="txt" align="right">
-		<table width="70%"  border="0" cellspacing="0" cellpadtding="0" align="right">
+		<table width="70%"  border="0" cellspacing="0" cellpadding="0" align="right">
 			<tr align="right">
 			<td width="15%" class="txt" align="right">Search: <input name="textfield" type="text" class="int"><a href="#"><img src="https://github.com/mosinski/Sklep-Rails2/blob/master/app/assets/stylesheets/images/go.jpg?raw=true" alt="" width="32" height="23" border="0" align="right"></a></td>
 			</tr>
