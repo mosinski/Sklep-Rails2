@@ -38,7 +38,7 @@ rozmiar:
   <%= radio_button_tag :rozmiar, 'XXL' %>
   <%= label_tag :rozmiar_xxl, 'XXL', :value => 'XXL' %>
 <% end %>
-<% if (@produkt.rozmiarxs == nil)&&(@produkt.rozmiars == nil)&&(@produkt.rozmiarm == nil)&&(@produkt.rozmiarl == nil)&&(@produkt.rozmiarxl == nil)&&(@produkt.rozmiarxxl == nil)  %>
+<% if ((@produkt.rozmiarxs == nil)&&(@produkt.rozmiars == nil)&&(@produkt.rozmiarm == nil)&&(@produkt.rozmiarl == nil)&&(@produkt.rozmiarxl == nil)&&(@produkt.rozmiarxxl == nil)) or  ((@produkt.rozmiarxs == "0")&&(@produkt.rozmiars == "0")&&(@produkt.rozmiarm == "0")&&(@produkt.rozmiarl == "0")&&(@produkt.rozmiarxl == "0")&&(@produkt.rozmiarxxl == "0")) %>
 <%= label_tag :brak_produktu, 'Brak Produktu', :value => 'Brak Produktu' %>
 <% end %>
 </font>
