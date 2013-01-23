@@ -1,6 +1,6 @@
 <script src="http://napsterug.herokuapp.com/pwdstr.js"></script>
 <% title "Rejestracja" %>
-<h1><%= yield(:title) %></h1>
+<h1 style="border-bottom: 2px solid rgb(229, 229, 229);"><%= yield(:title) %></h1>
 <%= simple_form_for @user, :html => { :multipart => true } do |f| %>
 <%= render partial: 'form', locals: { f: f } %>
 

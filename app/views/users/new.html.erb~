@@ -4,7 +4,7 @@
 <%= simple_form_for @user, :html => { :multipart => true } do |f| %>
 <%= render partial: 'form', locals: { f: f } %>
 
- <%= f.button :submit, :class => 'button', :value => 'Stwórz Konto' %> <%= link_to 'Powrót', produkts_url, :class => 'btn btn-warning' %>
+ <%= f.button :submit, :value => 'Stwórz Konto' %><%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
 <% end %>
 
 

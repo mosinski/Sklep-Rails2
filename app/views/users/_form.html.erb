@@ -6,9 +6,9 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
     <% if  (@user.errors.count)==1  %>
-      <h2>Użytkownik nie został stworzony z powodu jednego błędu</h2>
+      <h2 style="color: rgb(185, 74, 72);">Użytkownik nie został stworzony z powodu jednego błędu</h2>
     <% elsif (@user.errors.count)>1 %>
-	<h2>Użytkownik nie został stworzony z powodu <%= @user.errors.count %> błędów</h2>
+	<h2 style="color: rgb(185, 74, 72);">Użytkownik nie został stworzony z powodu <%= @user.errors.count %> błędów</h2>
     <% end %>
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
