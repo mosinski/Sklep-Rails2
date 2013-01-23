@@ -49,6 +49,12 @@ class ProduktsController < ApplicationController
     if current_user
 	if current_user.username == 'Administrator'||'Moderator'
     		@produkt = Produkt.new(params[:produkt])
+		@produkt.rozmiarxs = params[:rozmiarxs]
+		@produkt.rozmiars = params[:rozmiars]
+		@produkt.rozmiarm = params[:rozmiarm]
+		@produkt.rozmiarl = params[:rozmiarl]
+		@produkt.rozmiarxl = params[:rozmiarxl]
+		@produkt.rozmiarxxl = params[:rozmiarxxl]
 
    		 respond_to do |format|
       			if @produkt.save
@@ -71,6 +77,12 @@ class ProduktsController < ApplicationController
     if current_user
 	if current_user.username == 'Administrator'||'Jadwiga'
     		@produkt = Produkt.find(params[:id])
+		@produkt.rozmiarxs = params[:rozmiarxs]
+		@produkt.rozmiars = params[:rozmiars]
+		@produkt.rozmiarm = params[:rozmiarm]
+		@produkt.rozmiarl = params[:rozmiarl]
+		@produkt.rozmiarxl = params[:rozmiarxl]
+		@produkt.rozmiarxxl = params[:rozmiarxxl]
 
     		respond_to do |format|
       			if @produkt.update_attributes(params[:produkt])

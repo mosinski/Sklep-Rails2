@@ -25,7 +25,7 @@ class ProduktsController < ApplicationController
   # GET /produkts/new.json
   def new
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if current_user.username == 'Administrator'||'Moderator'
 		@produkt = Produkt.new
 
 		respond_to do |format|
@@ -47,8 +47,14 @@ class ProduktsController < ApplicationController
   # POST /produkts.json
   def create
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if current_user.username == 'Administrator'||'Moderator'
     		@produkt = Produkt.new(params[:produkt])
+		@produkt.rozmiarxs = params[:rozmiarxs]
+		@produkt.rozmiars = params[:rozmiars]
+		@produkt.rozmiarm = params[:rozmiarm]
+		@produkt.rozmiarl = params[:rozmiarl]
+		@produkt.rozmiarxl = params[:rozmiarxl]
+		@produkt.rozmiarxxl = params[:rozmiarxxl]
 
    		 respond_to do |format|
       			if @produkt.save
@@ -71,6 +77,12 @@ class ProduktsController < ApplicationController
     if current_user
 	if current_user.username == 'Administrator'||'Jadwiga'
     		@produkt = Produkt.find(params[:id])
+		@produkt.rozmiarxs = params[:rozmiarxs]
+		@produkt.rozmiars = params[:rozmiars]
+		@produkt.rozmiarm = params[:rozmiarm]
+		@produkt.rozmiarl = params[:rozmiarl]
+		@produkt.rozmiarxl = params[:rozmiarxl]
+		@produkt.rozmiarxxl = params[:rozmiarxxl]
 
     		respond_to do |format|
       			if @produkt.update_attributes(params[:produkt])
@@ -91,7 +103,7 @@ class ProduktsController < ApplicationController
   # DELETE /produkts/1.json
   def destroy
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if current_user.username == 'Administrator'||'Moderator'
 
     	@produkt = Produkt.find(params[:id])
     	@produkt.destroy

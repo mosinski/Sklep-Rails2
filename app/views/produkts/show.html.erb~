@@ -14,18 +14,30 @@ cena: <strong><%= @produkt.cena %> zł</strong>
 <br />
 rozmiar:
 <font style="font-size:18px;font-weight:bold;color:black;">
+<% if @produkt.rozmiarxs == "1" %>
   <%= radio_button_tag :rozmiar, 'XS' %> 
   <%= label_tag :rozmiar_xs, 'XS', :value => 'XS' %>
+<% end %>
+<% if @produkt.rozmiars == "1" %>
   <%= radio_button_tag :rozmiar, 'S' %>
   <%= label_tag :rozmiar_s, 'S', :value => 'S' %>
+<% end %>
+<% if @produkt.rozmiarm == "1" %>
   <%= radio_button_tag :rozmiar, 'M' %>
   <%= label_tag :rozmiar_m, 'M', :value => 'M' %>
+<% end %>
+<% if @produkt.rozmiarl == "1" %>
   <%= radio_button_tag :rozmiar, 'L' %>
   <%= label_tag :rozmiar_l, 'L', :value => 'L' %>
+<% end %>
+<% if @produkt.rozmiarxl == "1" %>
   <%= radio_button_tag :rozmiar, 'XL' %>
   <%= label_tag :rozmiar_xl, 'XL', :value => 'XL' %>
+cccc
+<% if @produkt.rozmiarxxl == "1" %>
   <%= radio_button_tag :rozmiar, 'XXL' %>
   <%= label_tag :rozmiar_xxl, 'XXL', :value => 'XXL' %>
+<% end %>
 </font>
 </div>
 <br />
@@ -43,5 +55,5 @@ rozmiar:
 <% if current_user && current_user.username == "Administrator" %>
 <%= link_to 'Edit', edit_produkt_path(@produkt) %> |
 <% end %>
-<%= link_to 'Back', produkts_path %>
+<%= link_to 'Wróć do listy', produkts_path %>
 </div>
