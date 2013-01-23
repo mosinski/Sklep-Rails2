@@ -38,6 +38,9 @@ rozmiar:
   <%= radio_button_tag :rozmiar, 'XXL' %>
   <%= label_tag :rozmiar_xxl, 'XXL', :value => 'XXL' %>
 <% end %>
+<% if (@produkt.rozmiarxs == nil)&&(@produkt.rozmiars == nil)&&(@produkt.rozmiarm == nil)&&(@produkt.rozmiarl == nil)&&(@produkt.rozmiarxl == nil)&&(@produkt.rozmiarxxl == nil)  %>
+<%= label_tag :brak_produktu, 'Brak Produktu', :value => 'Brak Produktu' %>
+<% end %>
 </font>
 </div>
 <br />

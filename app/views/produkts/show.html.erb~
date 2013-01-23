@@ -33,10 +33,13 @@ rozmiar:
 <% if @produkt.rozmiarxl == "1" %>
   <%= radio_button_tag :rozmiar, 'XL' %>
   <%= label_tag :rozmiar_xl, 'XL', :value => 'XL' %>
-cccc
+<% end %>
 <% if @produkt.rozmiarxxl == "1" %>
   <%= radio_button_tag :rozmiar, 'XXL' %>
   <%= label_tag :rozmiar_xxl, 'XXL', :value => 'XXL' %>
+<% end %>
+<% if (@produkt.rozmiarxs == nil)&&(@produkt.rozmiars == nil)&&(@produkt.rozmiarm == nil)&&(@produkt.rozmiarl == nil)  %>
+<%= label_tag :brak_produktu, 'Brak Produktu', :value => 'Brak Produktu' %>
 <% end %>
 </font>
 </div>
