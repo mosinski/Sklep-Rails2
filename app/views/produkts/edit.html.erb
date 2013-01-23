@@ -1,6 +1,6 @@
 <h1 style="border-bottom: 2px solid rgb(229, 229, 229);">Edycja Produktu</h1>
+<%= simple_form_for @produkt, :html => { :multipart => true } do |f| %>
+<%= render partial: 'form', locals: { f: f } %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @produkt %> |
-<%= link_to 'Back', produkts_path %>
+ <%= f.button :submit, :value => 'Aktualizuj Produkt' %><%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
+<% end %>

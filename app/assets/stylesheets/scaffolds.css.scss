@@ -238,7 +238,7 @@ font-size:20px;
 #produkt_tytul{
 font-size:20px;
 }
-.nowy_produkt_rozmiary,.nowy_produkt_opis{
+.nowy_produkt_rozmiary,.nowy_produkt_opis,.nowy_produkt_obrazek{
 font-size:18px;
 font-weight:bold;
 margin-left:10px;
@@ -247,4 +247,7 @@ margin-left:10px;
 width:600px;
 height:200px;
 resize:none;
-}		
+}
+#produkt_obrazek_url{
+width:600px;
+}
