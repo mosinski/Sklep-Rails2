@@ -2,11 +2,14 @@ class KoszyksController < ApplicationController
   # GET /koszyks
   # GET /koszyks.json
   def index
-    @koszyks = Koszyk.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @koszyks }
+    if current_user
+    @koszyks = Koszyk.find_all_by_wlasciciel(current_user.username)
+	respond_to do |format|
+         format.html # index.html.erb
+         format.json { render json: @koszyks }
+        end
+    else
+    redirect_to '/login', notice: 'Wymagane logowanie'
     end
   end
 
@@ -44,6 +47,7 @@ class KoszyksController < ApplicationController
     @koszyk = Koszyk.new(params[:koszyk])
     @koszyk.wlasciciel = current_user.username
     @koszyk.produkt_id = params[:koszyk_produkt_id]
+    @koszyk.produkt_tytul = params[:koszyk_produkt_tytul]
     @koszyk.ilosc = params[:koszyk_ilosc]
     @koszyk.cena = params[:koszyk_cena]
     @koszyk.wartosc = (@koszyk.cena * @koszyk.ilosc)

@@ -1,27 +1,38 @@
+<style>
+.gora{
+border-bottom:4px solid #4f76be;
+}
+#tytul{
+text-align:left;
+color:#2b4677;
+font-family:Arial;
+font-size:16px;
+font-weight:bold;
+}
+#uzytkownik{
+font-weight:normal;
+}
+</style>
+
 <h1 style="border-bottom: 2px solid rgb(229, 229, 229);">Twój Koszyk</h1>
 
-<table>
+<table style="width:100%;">
   <tr>
-    <th>Wlasciciel</th>
-    <th>Produkt</th>
-    <th>Ilosc</th>
-    <th>Cena</th>
-    <th>Wartosc</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
+    <th class="gora" id="tytul">Przedmioty użytkownika <span id="uzytkownik"><%= current_user.username %>:</span></th>
+    <th class="gora">Ilosc</th>
+    <th class="gora">Cena za sztukę</th>
+    <th class="gora">Wartosc</th>
+    <th class="gora"></th>
   </tr>
 
 <% @koszyks.each do |koszyk| %>
   <tr>
-    <td><%= koszyk.wlasciciel %></td>
-    <td><%= koszyk.produkt_id %></td>
+    <td><%= link_to koszyk.produkt_tytul, "/produkts/"+koszyk.produkt_id.to_s %></td>
     <td><%= koszyk.ilosc %></td>
     <td><%= koszyk.cena %></td>
     <td><%= koszyk.wartosc %></td>
-    <td><%= link_to 'Show', koszyk %></td>
-    <td><%= link_to 'Edit', edit_koszyk_path(koszyk) %></td>
-    <td><%= link_to 'Destroy', koszyk, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Usuń', koszyk, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
