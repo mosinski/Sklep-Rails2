@@ -1,42 +1,29 @@
-<style>
-.gora{
-border-bottom:4px solid #4f76be;
-}
-#tytul{
-text-align:left;
-color:#2b4677;
-font-family:Arial;
-font-size:16px;
-font-weight:bold;
-}
-#uzytkownik{
-font-weight:normal;
-}
-</style>
-
+<% suma = 0 %>
 <h1 style="border-bottom: 2px solid rgb(229, 229, 229);">Twój Koszyk</h1>
 
 <table style="width:100%;">
   <tr>
 
-    <th class="gora" id="tytul">Przedmioty użytkownika <span id="uzytkownik"><%= current_user.username %>:</span></th>
-    <th class="gora">Ilosc</th>
-    <th class="gora">Cena za sztukę</th>
-    <th class="gora">Wartosc</th>
-    <th class="gora"></th>
+    <th class="koszyk_tabela_gora" id="tytul">Przedmioty użytkownika <span id="uzytkownik"><%= current_user.username %>:</span></th>
+    <th class="koszyk_tabela_gora" id="wycentrowane">Ilość</th>
+    <th class="koszyk_tabela_gora" id="wycentrowane">Cena za sztukę</th>
+    <th class="koszyk_tabela_gora" id="wycentrowane">Wartość</th>
+    <th class="koszyk_tabela_gora"></th>
   </tr>
 
 <% @koszyks.each do |koszyk| %>
   <tr>
     <td><%= link_to koszyk.produkt_tytul, "/produkts/"+koszyk.produkt_id.to_s %></td>
-    <td><%= koszyk.ilosc %></td>
-    <td><%= koszyk.cena %></td>
-    <td><%= koszyk.wartosc %></td>
+    <td id="wycentrowane"><%= koszyk.ilosc %> szt.</td>
+    <td id="wycentrowane"><%= koszyk.cena %> zł</td>
+    <td id="wycentrowane"><%= koszyk.wartosc %> zł</td> 
+    <% suma += koszyk.wartosc %> 
     <td><%= link_to 'Usuń', koszyk, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+<div>
+<div class="koszyk_suma"><span id="uzytkownik">Suma:</span> <%= suma %> zł</div>
+<div>
 <br />
-
-<%= link_to 'New Koszyk', new_koszyk_path %>
+<%= button_to 'Wyczyść koszyk', "/wyczysc_koszyk" %>

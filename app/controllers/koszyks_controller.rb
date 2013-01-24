@@ -55,7 +55,7 @@ class KoszyksController < ApplicationController
 
     respond_to do |format|
       if @koszyk.save
-        format.html { redirect_to @koszyk, notice: 'Dodano do koszyka.' }
+        format.html { redirect_to root_url, notice: 'Dodano do koszyka.' }
         format.json { render json: @koszyk, status: :created, location: @koszyk }
       else
         format.html { render action: "new" }
@@ -93,5 +93,14 @@ class KoszyksController < ApplicationController
       format.html { redirect_to koszyks_url }
       format.json { head :no_content }
     end
+  end
+
+  def wyczysc_koszyk
+   if current_user
+   Koszyk.find_all_by_wlasciciel(current_user.username).each {|r| r.destroy}
+   redirect_to '/koszyks', notice: 'Koszyk pusty'
+   else
+   redirect_to '/login', notice: 'Wymagane logowanie'
+   end
   end
 end

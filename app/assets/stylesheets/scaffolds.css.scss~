@@ -225,6 +225,21 @@ width:40px;
 font-size:18px;
 text-align:center;
 }
+.koszyk_tabela_gora{
+border-bottom:4px solid #4f76be;
+}
+.koszyk_suma{
+border-top:4px solid #4f76be;
+display:block;
+float:right;
+padding: 3px 0px 0px 10px;
+text-align:right;
+margin-right:55px;
+color:#2b4677;
+font-family:Arial;
+font-size:16px;
+font-weight:bold;
+}
 .nowy_produkt_tytul,.nowy_produkt_cena{
 display:inline-block;
 font-size:18px;
@@ -250,4 +265,17 @@ resize:none;
 }
 #produkt_obrazek_url{
 width:600px;
+}
+#tytul{
+text-align:left;
+color:#2b4677;
+font-family:Arial;
+font-size:16px;
+font-weight:bold;
+}
+#uzytkownik{
+font-weight:normal;
+}
+#wycentrowane{
+text-align:center;
 }
