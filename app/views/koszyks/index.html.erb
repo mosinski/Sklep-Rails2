@@ -27,3 +27,7 @@
 <div>
 <br />
 <%= button_to 'Wyczyść koszyk', "/wyczysc_koszyk" %>
+<br /><br /><br />
+<div>
+<%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %> <%= submit_tag "Przejdź do kasy", :class => "button", :id => "przejdz_do_kasy" %>
+</div>
