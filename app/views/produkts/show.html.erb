@@ -44,7 +44,9 @@ rozmiar:
 </font>
 </div>
 <br />
+<% if ((@produkt.rozmiarxs != nil)or(@produkt.rozmiars != nil)or(@produkt.rozmiarm != nil)or(@produkt.rozmiarl != nil)or(@produkt.rozmiarxl != nil)or(@produkt.rozmiarxxl != nil)) %>
  <%= text_field_tag :koszyk_ilosc, "1" %><strong> x </strong><%= submit_tag "Dodaj do Koszyka", :class => "button" %>
+<% end %>
 </div>
 <br />
 <div class="produkt_show_opis">
