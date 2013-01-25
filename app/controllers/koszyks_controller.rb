@@ -52,7 +52,7 @@ class KoszyksController < ApplicationController
     @koszyk.cena = params[:koszyk_cena]
     @koszyk.wartosc = (@koszyk.cena * @koszyk.ilosc)
     @koszyk.rozmiar = params[:rozmiar]
-
+    if @koszyk.rozmiar != nil
     respond_to do |format|
       if @koszyk.save
         format.html { redirect_to root_url, notice: 'Dodano do koszyka.' }
@@ -61,6 +61,9 @@ class KoszyksController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @koszyk.errors, status: :unprocessable_entity }
       end
+    end
+    else
+    redirect_to '/produkts/'+@koszyk.produkt_id.to_s, notice: 'Nie wybrano rozmiaru!'
     end
     else
     redirect_to '/login', notice: 'Wymagane logowanie'
