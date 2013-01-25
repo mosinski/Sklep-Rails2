@@ -21,9 +21,9 @@
 	<td width="90%"><table width="750"  border="0" cellspacing="0" cellpadding="0">
 	<tr>
 	<% if current_user %>
-	<td width="25%" height="25" align="center"><%= current_user.username %> | <%= link_to "Wyloguj", :logout %></td>
+	<td width="25%" height="25" align="center" style="color: rgb(187, 187, 187);"><b><%= link_to current_user.username, "/users/"+current_user.id.to_s %></b> | <%= link_to "Wyloguj", :logout %></td>
 	<% else %>
-	<td width="25%" height="25" align="center"><%= link_to "Logowanie", :login %> | <%= link_to "Rejestracja", new_user_path%></td>
+	<td width="25%" height="25" align="center" style="color: rgb(187, 187, 187);"><%= link_to "Logowanie", :login %> | <%= link_to "Rejestracja", new_user_path%></td>
 	<% end %>
         <% if current_user %>
 	<% if Koszyk.find_all_by_wlasciciel(current_user.username).count == 0 %>
