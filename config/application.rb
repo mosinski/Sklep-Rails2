@@ -55,5 +55,6 @@ module SklepRails3
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.time_zone = 'Warsaw'
   end
 end
