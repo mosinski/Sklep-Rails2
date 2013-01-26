@@ -4,17 +4,17 @@
 </div>
 </p>
 <div style="display:block; width:100%; height:100%;">
-<div style="display: inline-block; width:49%;height:100%;">
+<div style="display: inline-block; width:42%;height:100%;">
 sadasd
 </div>
-<div style="display: inline-block; width:49%%;height:100%;">
+<div style="display: inline-block; width:3px;height:200px; background-color:rgb(229, 229, 229);margin-left:3px;margin-right:3px;">
+</div>
+<div style="display: inline-block; width:42%%;height:100%; text-align:center;">
 <p>
-  <b>Imię i Nazwisko:</b>
-  <%=h @user.imie %> <%=h @user.nazwisko %>
+  <%=h @user.imie.titleize %> <%=h @user.nazwisko.titleize %>
 </p>
 <p>
-  <b>Data Urodzenia:</b>
-  <%=h @user.data_urodzenia_dzien %>.<%=h @user.data_urodzenia_miesiac %>.<%=h @user.data_urodzenia_rok %>
+  ur. <%=h @user.data_urodzenia_dzien %>.<%=h @user.data_urodzenia_miesiac.to_s.rjust(2, '0') %>.<%=h @user.data_urodzenia_rok %>r.
 </p>
 <p>
   <b>Liczba logowań:</b>

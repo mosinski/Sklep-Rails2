@@ -1,6 +1,10 @@
   <% if @produkt.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@produkt.errors.count, "error") %> prohibited this produkt from being saved:</h2>
+      <% if  (@produkt.errors.count)==1  %>
+      <h2 style="color: rgb(185, 74, 72);">Produkt nie został dodany z powodu jednego błędu</h2>
+    <% elsif (@produkt.errors.count)>1 %>
+	<h2 style="color: rgb(185, 74, 72);">Produkt nie został dodany z powodu <%= @produkt.errors.count %> błędów</h2>
+    <% end %>
 
       <ul>
       <% @produkt.errors.full_messages.each do |msg| %>

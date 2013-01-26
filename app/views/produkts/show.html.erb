@@ -10,7 +10,7 @@
 <%= @produkt.tytul %>
 </div>
 <div class="produkt_show_cena">
-cena: <strong><%= @produkt.cena %> zł</strong>
+cena: <strong><%= number_with_precision(@produkt.cena, :precision => 2)    %> zł</strong>
 <br />
 rozmiar:
 <font style="font-size:18px;font-weight:bold;color:black;">

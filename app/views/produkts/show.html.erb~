@@ -44,7 +44,8 @@ rozmiar:
 </font>
 </div>
 <br />
-<% if ((@produkt.rozmiarxs != nil)or(@produkt.rozmiars != nil)or(@produkt.rozmiarm != nil)or(@produkt.rozmiarl != nil)or(@produkt.rozmiarxl != nil)or(@produkt.rozmiarxxl != nil)or(@produkt.rozmiarxs != "0")or(@produkt.rozmiars != "0")or(@produkt.rozmiarm != "0")or(@produkt.rozmiarl != "0")&&(@produkt.rozmiarxl != "0")or(@produkt.rozmiarxxl != "0")) %>
+<% if ((@produkt.rozmiarxs == nil)&&(@produkt.rozmiars == nil)&&(@produkt.rozmiarm == nil)&&(@produkt.rozmiarl == nil)&&(@produkt.rozmiarxl == nil)&&(@produkt.rozmiarxxl == nil)) or  ((@produkt.rozmiarxs == "0")&&(@produkt.rozmiars == "0")&&(@produkt.rozmiarm == "0")&&(@produkt.rozmiarl == "0")&&(@produkt.rozmiarxl == "0")&&(@produkt.rozmiarxxl == "0")) %>
+<% else %>
  <%= text_field_tag :koszyk_ilosc, "1" %><strong> x </strong><%= submit_tag "Dodaj do Koszyka", :class => "button" %>
 <% end %>
 </div>

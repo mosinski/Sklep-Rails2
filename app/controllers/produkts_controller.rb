@@ -25,13 +25,15 @@ class ProduktsController < ApplicationController
   # GET /produkts/new.json
   def new
     if current_user
-	if current_user.username == 'Administrator'||'Moderator'
+	if ((current_user.username == 'Administrator') || (current_user.username =='Moderator'))
 		@produkt = Produkt.new
 
 		respond_to do |format|
       			format.html # new.html.erb
       			format.json { render json: @produkt }
     		end
+	else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do dodania produktu!"
 	end
     else
 	redirect_to (:produkts), :notice => "Nie masz uprawnien do dodania produktu!"
@@ -40,14 +42,22 @@ class ProduktsController < ApplicationController
 
   # GET /produkts/1/edit
   def edit
-    @produkt = Produkt.find(params[:id])
+    if current_user 
+	if ((current_user.username == 'Administrator') || (current_user.username =='Moderator'))
+    	@produkt = Produkt.find(params[:id])
+	else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do tej operacji!"
+	end
+    else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do tej operacji!"
+    end
   end
 
   # POST /produkts
   # POST /produkts.json
   def create
     if current_user
-	if current_user.username == 'Administrator'||'Moderator'
+	if ((current_user.username == 'Administrator') || (current_user.username =='Moderator'))
     		@produkt = Produkt.new(params[:produkt])
 		@produkt.rozmiarxs = params[:rozmiarxs]
 		@produkt.rozmiars = params[:rozmiars]
@@ -65,6 +75,8 @@ class ProduktsController < ApplicationController
         		format.json { render json: @produkt.errors, status: :unprocessable_entity }
       			end
     		end
+	else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do dodania produktu!"
 	end
     else
 	redirect_to (:produkts), :notice => "Nie masz uprawnien do dodania produktu!"
@@ -75,7 +87,7 @@ class ProduktsController < ApplicationController
   # PUT /produkts/1.json
   def update
     if current_user
-	if current_user.username == 'Administrator'||'Jadwiga'
+	if ((current_user.username == 'Administrator') || (current_user.username =='Moderator'))
     		@produkt = Produkt.find(params[:id])
 		@produkt.rozmiarxs = params[:rozmiarxs]
 		@produkt.rozmiars = params[:rozmiars]
@@ -93,6 +105,8 @@ class ProduktsController < ApplicationController
         		format.json { render json: @produkt.errors, status: :unprocessable_entity }
       			end
     		end
+	else
+	redirect_to (:produkts), :notice => "Nie masz uprawnien do edycji produktu!"
 	end
     else
 	redirect_to (:produkts), :notice => "Nie masz uprawnien do edycji produktu!"

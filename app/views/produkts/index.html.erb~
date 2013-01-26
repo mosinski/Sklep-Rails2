@@ -2,7 +2,6 @@
 <br />
 <div class="produkty">
 <% @produkts.each do |produkt| %>
-<a href="@produkt">
 <div class="produkt">
 <%= link_to produkt.tytul, produkt %><br />
 <%= image_tag(produkt.obrazek_url, :class => "produkty_obrazek", :size => "220x269") %><br />
@@ -14,7 +13,6 @@
 <% end %>
 <% end %>
 </div>
-</a>
 <% end %>
 </div>
 

@@ -15,15 +15,15 @@
   <tr>
     <td><%= link_to koszyk.produkt_tytul, "/produkts/"+koszyk.produkt_id.to_s %></td>
     <td id="wycentrowane"><%= koszyk.ilosc %> szt.</td>
-    <td id="wycentrowane"><%= koszyk.cena %> zł</td>
-    <td id="wycentrowane"><%= koszyk.wartosc %> zł</td> 
+    <td id="wycentrowane"><%= number_with_precision(koszyk.cena, :precision => 2) %> zł</td>
+    <td id="wycentrowane"><%= number_with_precision(koszyk.wartosc, :precision => 2) %> zł</td> 
     <% suma += koszyk.wartosc %> 
     <td><%= link_to 'Usuń', koszyk, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 <div>
-<div class="koszyk_suma"><span id="uzytkownik">Suma:</span> <%= suma %> zł</div>
+<div class="koszyk_suma"><span id="uzytkownik">Suma:</span> <%= number_with_precision(suma, :precision => 2) %> zł</div>
 <div>
 <br />
 <%= button_to 'Wyczyść koszyk', "/wyczysc_koszyk" %>
