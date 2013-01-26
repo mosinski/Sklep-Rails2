@@ -280,6 +280,25 @@ font-weight:normal;
 #wycentrowane{
 text-align:center;
 }
-#przejdź_do_kasy{
+#przejdz_do_kasy{
 float:right;
 }
+.user_info_box{
+padding: 5px 5px 5px 15px;
+background: none repeat scroll 0% 0% rgb(255, 255, 255);
+border: 1px solid rgb(211, 211, 211);
+}
+.user_info_box ul {
+    border-radius: 5px 5px 5px 5px;
+    list-style: none outside none;
+    color: rgb(101, 101, 101);
+    margin: 0px;
+    padding: 0px;
+}
+.li2 {
+    background: url("http://static.allegrostatic.pl/site_images/1/0/common/li1.gif") no-repeat scroll 0% 0% transparent;
+    padding: 1px 8px;
+    text-align:left;
+}
+
+

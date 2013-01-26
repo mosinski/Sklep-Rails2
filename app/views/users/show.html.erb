@@ -14,26 +14,22 @@ sadasd
   <%=h @user.imie.titleize %> <%=h @user.nazwisko.titleize %>
 </p>
 <p>
-  ur. <%=h @user.data_urodzenia_dzien %>.<%=h @user.data_urodzenia_miesiac.to_s.rjust(2, '0') %>.<%=h @user.data_urodzenia_rok %> r.
+  ur. <%=h @user.data_urodzenia_dzien.to_s.rjust(2, '0') %>.<%=h @user.data_urodzenia_miesiac.to_s.rjust(2, '0') %>.<%=h @user.data_urodzenia_rok %> r.
 </p>
 <p>
-  <b>Liczba logowań:</b>
-  <%=h @user.login_count %>
+ul. <%= @user.adres_ulica.titleize %> <%= @user.adres_kod %> <%= @user.adres_miasto.titleize %> 
 </p>
+<div class="user_info_box">
+ <ul>
+ <li class="li2">Liczba logowań: <%=h @user.login_count %></li>
+ <li class="li2">Ostatnio logował się: <%=h @user.last_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:<%=h @user.last_login_ip %></li>
+ <li class="li2">Aktualne logowanie: <%=h @user.current_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:<%=h @user.current_login_ip %></li>
+ </ul>
+</div>
 
 <p>
   <b>Last request at:</b>
   <%=h @user.last_request_at %>
-</p>
-
-<p>
-  <b>Last login at:</b>
-  <%=h @user.last_login_at %>
-</p>
-
-<p>
-  <b>Current login at:</b>
-  <%=h @user.current_login_at %>
 </p>
 
 <p>

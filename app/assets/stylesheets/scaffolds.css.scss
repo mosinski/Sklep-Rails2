@@ -283,3 +283,22 @@ text-align:center;
 #przejdz_do_kasy{
 float:right;
 }
+.user_info_box{
+    padding: 5px 5px 5px 15px;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid rgb(211, 211, 211);
+}
+.user_info_box ul {
+    list-style: none outside none;
+    color: rgb(101, 101, 101);
+    margin: 0px;
+    padding: 0px;
+}
+.li2 {
+    background: url("http://static.allegrostatic.pl/site_images/1/0/common/li1.gif") no-repeat scroll 0% 0% transparent;
+    padding: 1px 8px;
+    text-align:left;
+}
+
+
