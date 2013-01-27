@@ -2,23 +2,40 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+     if current_user
+        if ((current_user.username == 'Administrator') || (current_user.username =='Moderator'))
+    	@users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
+    	respond_to do |format|
+     	 format.html # index.html.erb
+     	 format.json { render json: @users }
+    	end
+
+	else
+  	redirect_to produkts_url, :notice => 'Nie masz uprawnien!'
+  	end
+    else
+        redirect_to :login, :notice => 'Zaloguj sie aby obejrzec!'
     end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    if current_user
+	@user = User.find(params[:id])
+        if ((current_user.username == 'Administrator') || (current_user.username =='Moderator') || (current_user.username == @user.username))
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render json: @user }
+        end
+    	else
+  	redirect_to produkts_url, :notice => 'Nie masz uprawnien!'
+  	end
+   else
+  redirect_to :login, :notice => 'Zaloguj sie aby obejrzec!'
+  end
   end
 
   # GET /users/new
@@ -32,18 +49,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
-  def edit
-  if current_user
-	@user = User.find(params[:id])
-	if current_user.username == 'Administrator'||'Moderator'||@user.username
-	else
-  	redirect_to produkts_url, :notice => 'Nie masz uprawnien aby edytowac!'
-    	end
-  else
-  redirect_to :login, :notice => 'Zaloguj sie aby edytowac!'
-  end
-  end
 
   # POST /users
   # POST /users.json

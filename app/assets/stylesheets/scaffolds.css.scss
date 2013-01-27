@@ -300,5 +300,11 @@ float:right;
     padding: 1px 8px;
     text-align:left;
 }
-
-
+.user_info_name{
+    background: -moz-linear-gradient(center top , rgb(247, 247, 247) 0px, rgb(225, 225, 225) 100%) repeat scroll 0% 0% transparent;
+    border: 1px solid rgb(219, 224, 229);
+    border-radius: 5px 5px 5px 5px;
+}
+#user_show_powrot{
+float:right;
+}

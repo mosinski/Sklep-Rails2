@@ -1,36 +1,24 @@
-<% title "Użytkownicy" %>
-<h1><%= yield(:title) %></h1>
-<% if current_user %>
-<%if notice =! '' %>
-<p id="notice"><%= notice %></p>
-<% end %>
+<h1>Listing users</h1>
+
 <table>
   <tr>
-    <th>User</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
-  <tr>
 <% @users.each do |user| %>
-    <td>
- <% if (user.avatarurl.nil?) or (user.avatarurl == '') %>
-<%= image_tag avatar_url(user),:width => 60, :height => 60 %><br/>
- <% else %>
-<%= image_tag(user.avatarurl, :size => "60x60", :id => "avatar_maly") %><br/>
- <% end %>
-<%= user.username %><br/><%= link_to image_tag("eye.png"), user %>
-    <% if current_user.username == user.username %><%= link_to image_tag("edit.png"), edit_user_path(user) %>
-<%= link_to image_tag("trash.png"), user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
-<% end %>
+  <tr>
+    <td><%= user.username %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-
+<% end %>
 </table>
 
 <br />
 
-<% else %>
-<center><%= image_tag("dostep_zabroniony.gif") %></center><br/>
-<script type="text/javascript">
-window.location.href="http://napsterug.herokuapp.com/login"
-</script>
-<% end %>
-
+<%= link_to 'New User', new_user_path %>

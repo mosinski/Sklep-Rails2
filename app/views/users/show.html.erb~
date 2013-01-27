@@ -1,3 +1,26 @@
+<style>	
+#user_email{
+    display:block;				
+    width: 220px;
+    font-size: 20px;
+    margin-left:30px;
+    margin-bottom:10px;
+}
+#user_password {
+    display:block;
+    width: 180px;
+    margin-left: 50px;
+    margin-bottom:10px;
+    font-size: 20px;
+}
+#user_password_confirmation {
+    display:block;
+    width: 180px;
+    margin-left: 50px;
+    margin-bottom:10px;
+    font-size: 20px;
+}
+</style>
 <p>
 <div class="produkt_show_tytul">
   <b>Konto:</b> <%=h @user.username %> (<%=h @user.imie.titleize %> <%=h @user.nazwisko.titleize %>)
@@ -5,13 +28,19 @@
 </p>
 <div style="display:block; width:100%; height:100%;">
 <div style="display: inline-block; width:42%;height:100%;">
-sadasd
+<%= simple_form_for @user, :html => { :multipart => true } do |f| %>
+<%= f.input :email, :label => 'Email:', :placeholder => 'kowalski@poczta.pl' %>
+<%= f.input :password, :label => 'Nowe Hasło:', :placeholder => '*******' %>
+<%= f.input :password_confirmation, :label => 'Potwierdź Nowe Hasło:', :placeholder => '*******' %>
+<center><%= f.button :submit, :value => 'Aktualizuj Konto' %></center>
+<% end %>
 </div>
 <div style="display: inline-block; width:3px;height:200px; background-color:rgb(229, 229, 229);margin-left:3px;margin-right:3px;">
 </div>
 <div style="display: inline-block; width:42%%;height:100%; text-align:center;">
+<div class="user_info_name">
 <p>
-  <%=h @user.imie.titleize %> <%=h @user.nazwisko.titleize %>
+  <h3><%=h @user.imie.titleize %> <%=h @user.nazwisko.titleize %></h3>
 </p>
 <p>
   ur. <%=h @user.data_urodzenia_dzien.to_s.rjust(2, '0') %>.<%=h @user.data_urodzenia_miesiac.to_s.rjust(2, '0') %>.<%=h @user.data_urodzenia_rok %> r.
@@ -19,28 +48,20 @@ sadasd
 <p>
 ul. <%= @user.adres_ulica.titleize %> <%= @user.adres_kod %> <%= @user.adres_miasto.titleize %> 
 </p>
+<p>
+<b>@:</b> <%= @user.email %>
+</p>
+</div>
+<br />
 <div class="user_info_box">
  <ul>
  <li class="li2">Liczba logowań: <%=h @user.login_count %></li>
- <li class="li2">Ostatnio logował się: <%=h @user.last_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:</li>
- <li class="li2">Aktualne logowanie: <%=h @user.current_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:</li>
+ <li class="li2">Ostatnio logował się: <font style="float:right;"><%=h @user.last_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:<%=h @user.last_login_ip %></font></li>
+ <li class="li2">Aktualne logowanie: <font style="float:right;"><%=h @user.current_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:<%=h @user.current_login_ip %></font></li>
  </ul>
 </div>
-
-<p>
-  <b>Last request at:</b>
-  <%=h @user.last_request_at %>
-</p>
-
-<p>
-  <b>Ostatnie logowanie z ip:</b>
-  <%=h @user.last_login_ip %>
-</p>
-
-<p>
-  <b>Current login ip:</b>
-  <%=h @user.current_login_ip %>
-</p>
 </div>
 </div>
+<br /><br /><br />
+<%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
 
