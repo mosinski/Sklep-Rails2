@@ -63,5 +63,5 @@ ul. <%= @user.adres_ulica.titleize %> <%= @user.adres_kod %> <%= @user.adres_mia
 </div>
 </div>
 <br /><br /><br />
-<%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
+<%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" , :id => "user_show_powrot"%>
 
