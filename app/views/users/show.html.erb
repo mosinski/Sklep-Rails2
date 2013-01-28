@@ -57,7 +57,9 @@ ul. <%= @user.adres_ulica.titleize %> <%= @user.adres_kod %> <%= @user.adres_mia
  <ul>
  <li class="li2">Liczba logowań: <%=h @user.login_count %></li>
  <li class="li2">Użytkownik od: <%=h @user.created_at.strftime("%d.%m.%Y, %H:%M") %></li>
+ <% if @user.login_count > 3 %>
  <li class="li2">Ostatnio logował się: <font style="float:right;"><%=h @user.last_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:<%=h @user.last_login_ip %></font></li>
+ <% end %>
  <li class="li2">Aktualne logowanie: <font style="float:right;"><%=h @user.current_login_at.strftime("%d.%m.%Y, %H:%M") %> ip:<%=h @user.current_login_ip %></font></li>
  </ul>
 </div>

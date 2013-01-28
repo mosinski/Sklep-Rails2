@@ -2,19 +2,17 @@
 <br />
 <div class="produkty">
 <% @produkts.each do |produkt| %>
-<a href="/produkts/"+produkt.id.to_s >
 <div class="produkt">
 <%= link_to produkt.tytul, produkt %><br />
 <%= image_tag(produkt.obrazek_url, :class => "produkty_obrazek", :size => "220x269") %><br />
 <div class="cena"><b>Cena</b>: <%= number_with_precision(produkt.cena, :precision => 2) %> zł</div><br />
 <% if current_user %>
-<% if current_user.username == 'Administrator'||'Jadwiga' %>
+<% if current_user.username == 'Administrator'||'Moderator' %>
 <%= link_to 'Show', produkt %> | <%= link_to 'Edit', edit_produkt_path(produkt) %> | 
 <%= link_to 'Destroy', produkt, confirm: 'Are you sure?', method: :delete %>
 <% end %>
 <% end %>
 </div>
-</a>
 <% end %>
 </div>
 
