@@ -3,8 +3,20 @@
 <head>
 <title>Sklep Rails</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="style.css" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Marcellus&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>  
+<script src="http://www.w3resource.com/twitter-bootstrap/twitter-bootstrap-v2/js/bootstrap-modal.js"></script>  
+<% if current_user %>
+	<% if current_user.login_count == 1 %>
+<script type="text/javascript">
+    jQuery( function($) { 	
+        $('#example').modal('show');
+    });
+</script>
+	<% current_user.login_count = 1 %>
+	<% current_user.save %>
+	<% end %>
+<% end %> 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 </head>
@@ -21,7 +33,7 @@
 	<td width="90%"><table width="750"  border="0" cellspacing="0" cellpadding="0">
 	<tr>
 	<% if current_user %>
-	<td width="25%" height="25" align="center"><b><%= link_to current_user.username, "/users/"+current_user.id.to_s %></b> | <%= link_to "Wyloguj", :logout %></td>
+	<td width="25%" height="25" align="center" style="color: rgb(187, 187, 187);"><b><%= link_to current_user.username, "/users/"+current_user.id.to_s %></b> | <%= link_to "Wyloguj", :logout %></td>
 	<% else %>
 	<td width="25%" height="25" align="center" style="color: rgb(187, 187, 187);"><%= link_to "Logowanie", :login %> | <%= link_to "Rejestracja", new_user_path%></td>
 	<% end %>
@@ -65,7 +77,7 @@
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Gifts</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Specials</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Contact us</a></div>
-<div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">FAQ</a></div>
+<div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a data-toggle="modal" href="#example" id="wht2">Jak korzystać?</a></div>
     </td>
 	<td width="534"><a href="#"><img src="https://github.com/mosinski/Sklep-Rails2/raw/master/app/assets/stylesheets/images/ads.jpg" alt="" width="534" height="371" border="0"></a></td>
 	<td width="247">
@@ -80,7 +92,24 @@
 	</td>
 	</tr>
 	</table>
-		  
+	<div id="example" class="modal hide fade">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h3>Witaj Nowy Użytkowniku!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Jakie są korzyści?</h4>
+              <p>W naszym sklepie codziennie znajdziesz wiele okazji cenowych oraz unikatowych przedmiotów. Zakupy są tutaj proste i bezpieczne, a co najważniejsze – aby je zrobić, nie musisz nawet wychodzić z domu. Kupioną rzecz dostaniesz pocztą na wskazany adres.
+</p>		        
+<h4>Czym jest koszyk?</h4>
+<p>Koszyk to narzędzie ułatwiające zakupy w naszym sklepie. Przedmioty z koszyka kupisz jednym kliknięciem a zapłacisz za nie jedną wpłatą.
+Samo dodanie przedmiotu do koszyka nie jest równoznaczne z zakupem. Dopiero po kliknięciu "Przejdź do kasy" i potwierdzeniu zakupu, przedmiot będzie Twój.</p>
+<h5 style="text-align:right">Miłych Zakupów</h5>
+            </div>
+            <div class="modal-footer">
+              <center><%= button_tag "Zamknij",:type => 'button',:class => 'button', "data-dismiss" => "modal" %></center>
+            </div>
+          </div>  
 	<table width="990"  border="0" cellspacing="0" cellpadding="0">
 		<tr>
 		<td height="649" align="left" valign="top" class="tbody">
