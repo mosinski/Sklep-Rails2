@@ -18,7 +18,7 @@
     <td id="wycentrowane"><%= number_with_precision(koszyk.cena, :precision => 2) %> zł</td>
     <td id="wycentrowane"><%= number_with_precision(koszyk.wartosc, :precision => 2) %> zł</td> 
     <% suma += koszyk.wartosc %> 
-    <td><%= link_to 'Usuń', koszyk, confirm: "Napewno chcesz usunąć '#{koszyk.produkt_tytul}' z koszyka?", method: :delete %></td>
+    <td><%= link_to 'Usuń', koszyk, confirm: "Napewno chcesz usunąć '#{koszyk.produkt_tytul}' z koszyka?", method: :delete, :disable_with => 'loading...' %></td>
   </tr>
 <% end %>
 </table>
