@@ -26,7 +26,7 @@ class KoszyksController < ApplicationController
     @koszyk.cena = params[:koszyk_cena]
     @koszyk.wartosc = (@koszyk.cena * @koszyk.ilosc)
     @koszyk.rozmiar = params[:rozmiar]
-    if @koszyk.rozmiar != nil
+    if ((@koszyk.rozmiar != nil)&&(@koszyk.ilosc.to_f != 0.0))
     respond_to do |format|
       if @koszyk.save
         format.html { redirect_to root_url, notice: 'Dodano do koszyka.' }
@@ -37,7 +37,11 @@ class KoszyksController < ApplicationController
       end
     end
     else
-    redirect_to '/produkts/'+@koszyk.produkt_id.to_s, notice: 'Nie wybrano rozmiaru!'
+    	if @koszyk.rozmiar == nil
+    		redirect_to '/produkts/'+@koszyk.produkt_id.to_s, notice: 'Nie wybrano rozmiaru!'
+    	else @koszyk.ilosc.to_f == 0.0
+    		redirect_to '/produkts/'+@koszyk.produkt_id.to_s, notice: 'Ilosc jest niepoprawna!'
+   	end
     end
     else
     redirect_to '/login', notice: 'Wymagane logowanie'
@@ -53,4 +57,21 @@ class KoszyksController < ApplicationController
    redirect_to '/login', notice: 'Wymagane logowanie!'
    end
   end
+
+  def destroy
+    if current_user
+	@koszyk = Koszyk.find(params[:id])
+	if current_user.username == @koszyk.wlasciciel
+    	@koszyk.destroy
+
+    	respond_to do |format|
+      		format.html { redirect_to produkts_url }
+      		format.json { head :no_content }
+    	end
+        end
+    else
+	redirect_to (:produkts), :notice => "Ten produkt nie jest w twoim koszyku!"
+    end
+  end
+
 end
