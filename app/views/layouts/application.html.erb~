@@ -13,7 +13,7 @@
         $('#example').modal('show');
     });
 </script>
-	<% current_user.login_count = 1 %>
+	<% current_user.login_count = 2 %>
 	<% current_user.save %>
 	<% end %>
 <% end %> 
@@ -66,9 +66,9 @@
   <table width="990"  border="0" cellspacing="0" cellpadding="0" style="margin-top:85px;">
    <tr align="left" valign="top">
     <td width="209" height="363">
- <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Home</a></div>
- <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">New collection</a></div>
-<div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">All products</a></div>
+ <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="/" id="wht2">Home</a></div>
+ <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Nowa Kolekcja</a></div>
+<div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Wszystkie Produkty</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Clothing</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Shoes</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Lingerie</a></div>
@@ -76,7 +76,7 @@
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Accessories</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Gifts</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Specials</a></div>
-<div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Contact us</a></div>
+<div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Kontakt</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a data-toggle="modal" href="#example" id="wht2">Jak korzystać?</a></div>
     </td>
 	<td width="534"><a href="#"><img src="https://github.com/mosinski/Sklep-Rails2/raw/master/app/assets/stylesheets/images/ads.jpg" alt="" width="534" height="371" border="0"></a></td>
@@ -175,7 +175,7 @@ Samo dodanie przedmiotu do koszyka nie jest równoznaczne z zakupem. Dopiero po 
 										<a href="#" id="wht2">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;				  <a href="#" id="wht2">FAQ Certification</a>&nbsp;&nbsp; |&nbsp;&nbsp;				  <a href="#" id="wht2">Shipping</a>&nbsp; &nbsp;|&nbsp;&nbsp;				  <a href="#" id="wht2">Guarantee</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
 								<a href="#" id="wht2">Site map</a></td>
 							  <td width="125" class="txt">&nbsp;</td>
-							  <td width="406" align="center" class="txt">Copyright &copy; 2011 <a href="#" id="wht2">Web Page Templates</a>. All Rights Reserved</td>
+							  <td width="406" align="center" class="txt">Copyright &copy; 2013 <a href="/" id="wht2">Sklep Rails</a>. All Rights Reserved</td>
 							</tr>
 						  </table>
 					  </td>
