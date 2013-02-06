@@ -193,7 +193,7 @@ if($("#password_time").is(":empty")||$("#user_password").val() == ''){
 $("#password_time").hide('fast');
 }
 else{
-$("#password_time").show(1000);
+$("#password_time").show('fast');
 }
 return
 }, 1500);
