@@ -6,9 +6,9 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
     <% if  (@user.errors.count)==1  %>
-      <h2>Użytkownik nie został stworzony z powodu jednego błędu</h2>
+      <h2 style="color: rgb(185, 74, 72);">Użytkownik nie został stworzony z powodu jednego błędu</h2>
     <% elsif (@user.errors.count)>1 %>
-	<h2>Użytkownik nie został stworzony z powodu <%= @user.errors.count %> błędów</h2>
+	<h2 style="color: rgb(185, 74, 72);">Użytkownik nie został stworzony z powodu <%= @user.errors.count %> błędów</h2>
     <% end %>
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
@@ -30,7 +30,7 @@
     <%= f.input :adres_kod, :label => 'Adres Kod Pocztowy', :placeholder => 'np. 85-125' %>
     <%= f.input :adres_miasto, :label => 'Adres Miasto', :placeholder => 'np. Gdańsk' %>
     <%= f.input :email, :label => 'Email', :placeholder => 'kowalski@poczta.pl' %>
-    <%= f.input :password, :label => 'Hasło', :placeholder => '*******' %>
+    <%= f.input :password, :label => 'Hasło', :placeholder => '*******' %><span id="password_time"></span>
     <%= f.input :password_confirmation, :label => 'Potwierdź Hasło', :placeholder => '*******' %>
     </div>
 <br />

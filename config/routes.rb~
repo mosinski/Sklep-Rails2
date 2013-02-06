@@ -10,6 +10,7 @@ SklepRails3::Application.routes.draw do
   match '/nie_zakladalem_konta' => 'users_#pomylka'
   match '/zgloszenie' => 'users_#zgloszenie'
   match '/dodaj_do_koszyka' => 'koszyks_#create'
+  match '/wyczysc_koszyk' => 'koszyks_#wyczysc_koszyk'
   root :to => 'produkts#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
