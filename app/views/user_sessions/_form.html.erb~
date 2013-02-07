@@ -6,7 +6,7 @@
 </style>
 <%= simple_form_for(@user_session) do |f| %>
 <% if f.error_notification %>
-	<h4 style="color: rgb(185, 74, 72);">Logowanie nie powiodło się, popraw błędy i spróbuj ponownie.</h4>
+<h4 style="color: rgb(185, 74, 72);">Logowanie nie powiodło się, popraw błędy i spróbuj ponownie.</h4>
 <% end %>
 
     
@@ -15,9 +15,8 @@
     <br />
     <%= f.input :password, :label => 'Hasło', :placeholder => '*******' %>
   </div>
-
+<br>
 <%= f.check_box :remember_me %><%= f.label :zapamietaj_mnie %>
-<br /><br /><br /><br />
-
+<br /><br /><br />
     <%= f.button :submit, :value => 'Zaloguj się'%> <%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
 <% end %>

@@ -1,0 +1,20 @@
+<% title "Przypomnienie Hasła" %>
+<h1 style="border-bottom: 2px solid rgb(229, 229, 229);"><%= yield(:title) %></h1>
+<br><br>
+<%= form_tag "/przypomnienie_hasla" do %>
+  <b><%= label_tag(:q, "Nick Profilu: ", :class => "label_przypomnienie") %></b>
+  <%= text_field_tag(:login_input, nil, :placeholder => "Wpisz swój login") %> <%= submit_tag " Wyślij ", :class => 'button', :id => "wyslij_przypomnienie" %><br><br>
+
+<div style="visibility: visible; left: 150px; top: 135px; opacity: 1;" class="jfk-bubble">
+<div class="jfk-bubble-content-id">
+<ul id="signupidvusage-bubble-content" class="secondary" style="margin: 0px 18px 0px 18px;">
+
+  <b>Przypomnienie Hasła</b>, <br>
+  Po wpisaniu <u>poprawnego</u> loginu z naszego sklepu<br>
+  na mail podany przy rejestracji zostanie wysłana<br>
+  wiadomość z dalszymi instrukcjami.
+
+  </ul>
+</div>
+</div>
+<% end %>
