@@ -68,6 +68,8 @@
 					if(hours > 0){
 						if(hours == 1)
 							time.push("1 godzinę, ");
+						else if(hours > 1 && hours < 5)
+							time.push(hours + " godziny, ");
 						else
 							time.push(hours + " godzin, ");
 					}
