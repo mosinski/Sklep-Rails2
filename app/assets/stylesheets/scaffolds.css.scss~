@@ -455,13 +455,15 @@ float:right;
 color: rgb(58, 135, 173);
 border-radius: 4px 4px 4px 4px;
 background-color: rgb(217, 237, 247);
-margin-top:5px;
-margin-bottom:5px;
-display:none;
 border:1px;
 border-color: rgb(188, 232, 241);
 padding: 8px 35px 8px 14px;
 font-weight:bold;
+}
+.password_oblicz{
+display:none;
+margin-top:5px;
+margin-bottom:5px;
 }
 .jfk-bubble {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -484,8 +486,6 @@ font-size:20px;
 width:160px;
 }
 #wyslij_przypomnienie{
-width:200px;
-height:37px;
 font-size:20px;
 margin-left:80px;
 }

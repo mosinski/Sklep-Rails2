@@ -4,7 +4,8 @@
 <title>Sklep Rails</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href='http://fonts.googleapis.com/css?family=Marcellus&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>  
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/javascripts/pwdstr.js"></script>
 <script src="http://www.w3resource.com/twitter-bootstrap/twitter-bootstrap-v2/js/bootstrap-modal.js"></script>  
 <% if current_user %>
 	<% if current_user.login_count == 1 %>
@@ -186,14 +187,13 @@ Samo dodanie przedmiotu do koszyka nie jest równoznaczne z zakupem. Dopiero po 
 	  </tr>
 	</table>
 <script type="text/javascript">
-$("#password").pwdstr("#password_time");
 $("#user_password").pwdstr("#password_time");
 setInterval(function() {
 if($("#password_time").is(":empty")||$("#user_password").val() == ''){
-$("#password_time").hide('fast');
+$(".password_oblicz").hide('fast');
 }
 else{
-$("#password_time").show('fast');
+$(".password_oblicz").show('fast');
 }
 return
 }, 1500);
