@@ -54,8 +54,10 @@
 					if(months > 0){
 						if(months == 1)
 							time.push("1 miesiąc, ");
+						else if(months > 1 && months < 5)
+							time.push(months + " miesiące, ");
 						else
-							time.push(months + " miesiący, ");
+							time.push(months + " miesięcy, ");
 					}
 					if(days > 0){
 						if(days == 1)
@@ -72,8 +74,10 @@
 					if(minutes > 0){
 						if(minutes == 1)
 							time.push("1 minute, ");
+						else if(minutes > 1 && minutes < 5)
+							time.push(months + " minuty, ");
 						else
-							time.push(minutes + " minuty, ");
+							time.push(minutes + " minut, ");
 					}
 					if(seconds > 0){
 						if(seconds == 1)
