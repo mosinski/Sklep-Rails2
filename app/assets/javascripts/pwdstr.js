@@ -84,6 +84,8 @@
 					if(seconds > 0){
 						if(seconds == 1)
 							time.push("1 sekunde, ");
+						else if(seconds > 1 && seconds < 5)
+							time.push(months + " sekundy, ");
 						else
 							time.push(seconds + " sekund, ");
 					}
