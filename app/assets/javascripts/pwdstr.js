@@ -45,8 +45,11 @@
 					if(years > 0){
 						if(years == 1)
 							time.push("1 rok, ");
+						else if(years > 1 && years < 5)
+							time.push(years + " lata, ");
 						else
 							time.push(years + " lat, ");
+						
 					}
 					if(months > 0){
 						if(months == 1)
