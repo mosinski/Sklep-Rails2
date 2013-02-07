@@ -77,7 +77,7 @@
 						if(minutes == 1)
 							time.push("1 minute, ");
 						else if(minutes > 1 && minutes < 5)
-							time.push(months + " minuty, ");
+							time.push(minutes + " minuty, ");
 						else
 							time.push(minutes + " minut, ");
 					}
@@ -85,7 +85,7 @@
 						if(seconds == 1)
 							time.push("1 sekunde, ");
 						else if(seconds > 1 && seconds < 5)
-							time.push(months + " sekundy, ");
+							time.push(seconds + " sekundy, ");
 						else
 							time.push(seconds + " sekund, ");
 					}
