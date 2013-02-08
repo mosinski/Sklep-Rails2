@@ -12,6 +12,7 @@ SklepRails3::Application.routes.draw do
   match '/dodaj_do_koszyka' => 'koszyks_#create'
   match '/wyczysc_koszyk' => 'koszyks_#wyczysc_koszyk'
   match 'kontakt' => 'produkts#kontakt'
+  match 'panel' => 'users#panel_administratora'
   match '/nie_pamietam_hasla' => 'user_sessions_#nie_pamietam_hasla'
   match '/przypomnienie_hasla' => 'user_sessions#przypomnienie'
   match '/reset_hasla' => 'user_sessions_#reset_hasla'

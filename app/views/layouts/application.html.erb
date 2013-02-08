@@ -67,7 +67,11 @@
   <table width="990"  border="0" cellspacing="0" cellpadding="0" style="margin-top:85px;">
    <tr align="left" valign="top">
     <td width="209" height="363">
+<% if current_user && current_user.username == "Administrator" && current_user.id == 1 %>
+ <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="/panel" id="wht2">Panel Administratora</a></div>
+<% else %>
  <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="/" id="wht2">Home</a></div>
+<% end %>
  <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Nowa Kolekcja</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Wszystkie Produkty</a></div>
 <div class="button1"><img src="https://raw.github.com/mosinski/Sklep-Rails2/master/app/assets/stylesheets/images/spacer.gif" alt="" width="25" height="19"><a href="#" id="wht2">Clothing</a></div>

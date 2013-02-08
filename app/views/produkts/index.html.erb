@@ -15,10 +15,3 @@
 </div>
 <% end %>
 </div>
-
-<br />
-<% if current_user %>
-<% if current_user.username == 'Administrator'||'Moderator' %>
-<%= link_to 'New Produkt', new_produkt_path %>
-<% end %>
-<% end %>

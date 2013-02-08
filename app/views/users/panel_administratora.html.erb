@@ -1,0 +1,11 @@
+<% title "Panel Administratora" %>
+<h1 style="border-bottom: 2px solid rgb(229, 229, 229);"><%= yield(:title) %></h1>
+<%= button_tag "Dodaj Nowy Produkt",:type => 'button',:class => 'button',:onclick => "location.href = '/produkts/new'" %>
+<%= button_tag "Dodaj Nową Kategorie",:type => 'button',:class => 'button',:onclick => "location.href = '/'" %>
+<br><br>
+<%= button_tag "Zamówienia Zrealizowane",:type => 'button',:class => 'button',:onclick => "location.href = '/'" %>
+<%= button_tag "Zamówienia Oczekujące",:type => 'button',:class => 'button',:onclick => "location.href = '/'" %>
+<br><br><br>
+<%= button_tag "Powrót",:type => 'button',:class => 'button',:onclick => "location.href = '#{produkts_url}'" %>
+
+

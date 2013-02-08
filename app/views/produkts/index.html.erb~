@@ -7,7 +7,7 @@
 <%= image_tag(produkt.obrazek_url, :class => "produkty_obrazek", :size => "220x269") %><br />
 <div class="cena"><b>Cena</b>: <%= number_with_precision(produkt.cena, :precision => 2) %> zł</div><br />
 <% if current_user %>
-<% if current_user.username == 'Administrator'||'Moderator' %>
+<% if ((current_user.username == 'Administrator')||(current_user.username == 'Moderator'))%>
 <%= link_to 'Show', produkt %> | <%= link_to 'Edit', edit_produkt_path(produkt) %> | 
 <%= link_to 'Destroy', produkt, confirm: 'Are you sure?', method: :delete %>
 <% end %>
